@@ -15,6 +15,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="s">
         <activity
+            android:name=".kuis.SkorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".kuis.KuisActivity"
+            android:exported="false" />
+        <activity
             android:name=".detail.DetailActivity"
             android:exported="false" />
         <activity
