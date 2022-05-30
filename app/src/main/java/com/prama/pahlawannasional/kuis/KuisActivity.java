@@ -2,7 +2,10 @@ package com.prama.pahlawannasional.kuis;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.prama.pahlawannasional.R;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +18,8 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
     private TextView question;
     private Button nextButton;
     private Button backButton;
+    private TextView scoreText;
+    private Integer score = 0;
 
     private Question[] questionBank = new Question[]{
             new Question(R.string.pertanyaan, true),
@@ -36,11 +41,13 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
         question = findViewById(R.id.question);
         nextButton = findViewById(R.id.nextButton);
         backButton = findViewById(R.id.backButton);
+        scoreText = findViewById(R.id.scoreText);
 
         trueButton.setOnClickListener(this);
         falseButton.setOnClickListener(this);
         nextButton.setOnClickListener(this);
         backButton.setOnClickListener(this);
+
     }
 
     @Override
@@ -55,8 +62,16 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.nextButton:
-                currentQuestionIndex = (currentQuestionIndex + 1) % questionBank.length;
-                updateQuestion();
+                if(currentQuestionIndex == questionBank.length-1) {
+                    Intent i = new Intent(KuisActivity.this, SkorActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("finalScore", score);
+                    i.putExtras(bundle);
+                    KuisActivity.this.finish();
+                    startActivity(i);
+                }
+                    currentQuestionIndex = (currentQuestionIndex + 1) % questionBank.length;
+                    updateQuestion();
                 break;
 
             case R.id.backButton:
@@ -77,10 +92,17 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
         int toastMessage = 0;
         if (userChoosenCorrect == answerIsTrue){
             toastMessage = R.string.correct_answer;
+            score++; //update score
+            updateScore(score);//convert int variable to string and adding it to scoreText in layout
+
         }else{
             toastMessage = R.string.wrong_answer;
+
         }
         Toast.makeText(KuisActivity.this,toastMessage,Toast.LENGTH_SHORT).show();
-
     }
+    private void updateScore(int point){
+        scoreText.setText("" + score);
+    }
+
 }

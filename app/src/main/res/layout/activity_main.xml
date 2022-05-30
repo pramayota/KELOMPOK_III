@@ -7,6 +7,7 @@
     android:fitsSystemWindows="true">
 
     <xyz.sahildave.arclayout.ArcLayout
+        android:id="@+id/arcLayout"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:arc_cropCurve="cropConcave"
@@ -39,6 +40,15 @@
             android:layout_marginBottom="20px"
             android:background="@drawable/bg_search"
             android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100px"
+                android:layout_marginStart="100dp"
+                android:text="Quiz Pahlawan"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:theme="@style/SearchView" />
 
             <Button
                 android:id="@+id/quizBtn"

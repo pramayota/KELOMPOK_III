@@ -21,28 +21,25 @@
         android:padding="16dp"
         android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:id="@+id/skor1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/skor_anda"
-        android:textSize="24sp"
-        android:padding="16dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
         android:background="#ffff"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:gravity="center">
 
-    <TextView
-        android:id="@+id/skor2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/skor_tertinggi"
-        android:textSize="24sp"
-        android:padding="16dp"
-        android:background="#ffff"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        <TextView
+            android:id="@+id/finalScore"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="fill"
+            android:textSize="20sp"
+            android:text="@string/grade"/>
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRetry"
         android:text="@string/coba_lagi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
