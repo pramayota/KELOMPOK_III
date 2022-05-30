@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/quiz"
+    <xyz.sahildave.arclayout.ArcLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="20dp"
-        android:textAlignment="center"
-        android:padding="4dp"
-        android:text="@string/quiz"
-        android:textSize="40sp"/>
+        android:layout_height="200dp"
+        app:arc_cropCurve="cropConcave"
+        app:arc_height="38dp"
+        app:arc_position="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal"
+            android:gravity="center"
+            android:orientation="vertical" />
+
+
+        <TextView
+            android:id="@+id/quiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/quiz"
+            android:textSize="40sp"/>
+
+    </xyz.sahildave.arclayout.ArcLayout>
 
     <LinearLayout
         android:id="@+id/activity_quiz"
@@ -22,7 +41,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingTop="80dp">
-
     <TextView
         android:id="@+id/question"
         android:layout_width="match_parent"
@@ -52,31 +70,34 @@
         android:padding="8dp"
         android:text="@string/b" />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/backButton"
                 android:layout_width="350px"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="183dp"
                 android:padding="8dp"
-                android:text="@string/c" />
+                android:text="@string/c"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/nextButton"
                 android:layout_width="350px"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="68dp"
                 android:padding="8dp"
-                android:text="@string/d" />
-
-        </LinearLayout>
+                android:text="@string/d"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
-
 </LinearLayout>
