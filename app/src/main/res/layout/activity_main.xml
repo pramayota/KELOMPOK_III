@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:arc_cropCurve="cropConcave"
-        app:arc_height="48dp"
+        app:arc_height="38dp"
         app:arc_position="bottom">
 
         <LinearLayout
@@ -25,6 +25,7 @@
     <include layout="@layout/toolbar" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
@@ -32,7 +33,28 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20px"
+            android:background="@drawable/bg_search"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/quizBtn"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:layout_marginBottom="50px"
+                android:text="Quiz Pahlawan"
+                android:textSize="18sp"
+                android:theme="@style/SearchView"
+                android:alpha="0"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/bg_search"

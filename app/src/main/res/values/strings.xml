@@ -1,10 +1,18 @@
 <resources>
     <string name="app_name">Pahlawan Nasional</string>
-    <string name="pertanyaan">1. Siapakah pendiri Taman Mahasiswa?</string>
-    <string name="a">Ir. Soekarno</string>
-    <string name="b">Bung Hatta</string>
-    <string name="c">Ismail Marzuki</string>
-    <string name="d">Ki Hajar Dewantara</string>
+    <string name="pertanyaan">Ki Hajar Dewantara adalah pendiri Taman Mahasiswa</string> //true
+    <string name="pertanyaan2">Salah satu tokoh perumusan Pancasila adalah Ahmad Soebardjo</string> //false
+    <string name="pertanyaan3">Adam Malik merupakan salah satu tokoh pendiri ASEAN</string> //true
+    <string name="pertanyaan4">Raden Dewi Sartika menjadi tokoh perintis pendidikan perempuan di Bandung</string> //true
+    <string name="pertanyaan5">7 Juni adalah tanggal lahir dari tokoh proklamator Indonesia Ir. Soekarno</string> //false
+
+    <string name="correct_answer">That\'s correct!</string> //false
+    <string name="wrong_answer">That\'s incorrect!</string> //false
+
+    <string name="a">True</string>
+    <string name="b">False</string>
+    <string name="c">Back</string>
+    <string name="d">Next</string>
     <string name="score">Score</string>
     <string name="_0_0">0/0</string>
     <string name="title_activity_skor">SkorActivity</string>
@@ -12,4 +20,5 @@
     <string name="skor_tertinggi">Skor Sebelumnya: 100</string>
     <string name="coba_lagi">Coba Lagi</string>
     <string name="hasil">Selamat Anda Telah Menyelesaikan Quiz!!</string>
+    <string name="quiz">QUIZ PAHLAWAN NASIONAL</string>
 </resources>

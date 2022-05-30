@@ -1,5 +1,6 @@
 package com.prama.pahlawannasional.main
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.prama.pahlawannasional.R
+import com.prama.pahlawannasional.kuis.KuisActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONException
 import org.json.JSONObject
@@ -22,6 +24,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        quizBtn.setOnClickListener{
+            val intent = Intent(this, KuisActivity::class.java)
+            startActivity(intent)
+        }
 
         //transparent background searchview
         val searchPlateId = searchData.getContext()
